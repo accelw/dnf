@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/swiper/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="libs/jquery-3.2.1.js"></script>
+    <title>毒奶粉</title>
+</head>
+<body>
+  <!-- 主页的头部 -->
+      <header>
+         
+      </header>
+      <!-- 首页主体 -->
+      <main>
+
+        <!-- 轮播图 -->
+        <div class="banner">
+          <!-- 轮播左边栏 -->
+          <div class="navlist_bar">
+            <ul class="navlist">
+              <li>
+                <h3><a class="nav_1" href="javascript:;">礼包收藏</a></h3>
+                <div class="nav_link1">
+                    <a href="javascript:;">典藏包</a>
+                    <a href="javascript:;">雕塑</a>
+                </div>
+              </li>
+              <li>
+                <h3><a class="nav_2" href="javascript:;">手办模型</a></h3>
+                <div class="nav_link2">
+                    <a href="javascript:;">手办</a>
+                    <a href="javascript:;">武器模型</a>
+                </div>
+              </li>
+              <li>
+                <h3><a class="nav_3" href="javascript:;">数码电子</a></h3>
+                <div class="nav_link3">
+                    <a href="javascript:;">手表</a>
+                    <a href="javascript:;">火机</a>
+                    <a href="javascript:;">音响</a>
+                    <a href="javascript:;">数码</a>
+                </div>
+              </li>
+              <li class="hotpoint">
+              
+              </li>
+            </ul>
+          </div>
+           <!-- 轮播右边栏 -->
+          <div class="newbar">
+            <div class="newlist">
+              <h3>周边公告</h3>
+              <a href="javascript:;">周边商城用户体验调查</a>
+              <a href="javascript:;">周边商城产品销售权说明</a>
+              <a href="javascript:;">紧急：关于CDK领取系统切换</a>
+              <a href="javascript:;">12月稀有体验服资格</a>
+              <a href="javascript:;">客服服务公告</a>
+            </div>
+            <div>
+              <a class="new_imglink" href="javascript:;"></a>
+            </div>
+          </div>
+          <!-- 轮播图主体 -->
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a class="img1" href="javascript:;"></a></div>
+                <div class="swiper-slide"><a class="img2" href="javascript:;"></a></div>
+                <div class="swiper-slide"><a class="img3" href="javascript:;"></a></div>
+            </div>
+            <!-- 分页器 -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- 导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+      
+          </div>
+        </div>
+         <!-- 三个热门专区 -->
+        <div id ="hot_pic" class="bann_nav container">
+          <!-- <a class="ban1" href="javascript:;"></a>
+          <a class="ban2" href="javascript:;"></a>
+          <a class="ban3" href="javascript:;"></a> -->
+        </div>
+         <!-- 时下热门大图 -->
+        <a class="big_bann" href="javascirpt:;">
+          <img src="imgs/da7.png" >
+        </a>
+          <!-- 首页热门商品展示 -->
+        <div class="hot_shop">
+          <ul id ="menu_shop" class="hot_list container">
+            <!-- <li>
+              <a class="hot_pic" href="javascript:;"></a>
+              <a class="hot_name" href="javascript:;">先随便写点</a>
+              <div>
+                <span class="price">666元</span>
+                <span class="likes">喜欢 ： 8844</span>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </main> 
+
+      <!-- 首页底部 -->
+      <footer>
+        
+      </footer>
+      <script src="/libs/swiper/dist/js/swiper.min.js"></script>
+      <script src="libs/require/require.min.js" data-main="js/index"></script>
+      
+      <script>        
+        var mySwiper = new Swiper ('.swiper-container', {
+          effect: 'fade', 
+          loop: true, 
+          autoplay:{
+              stopOnLastSide:true,
+          },
+          fadeEffect: {
+          crossFade: true,
+          },     
+          pagination: {
+            el: '.swiper-pagination',
+
+          },          
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        })      
+        </script>
+</body>
+</html>
