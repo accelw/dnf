@@ -11,14 +11,14 @@ require(['./config'],() =>{
 
             init(){
                 $.get('http://rap2api.taobao.org/app/mock/178016/index_pic',resp =>{
-                     if(resp.res_code == 200){
+                     if(resp.res_code === 200){
                        this.indPic(resp);
                     //    console.log(resp);
                        
                      }
                 })
                 $.get('http://rap2api.taobao.org/app/mock/178016/index_list',resp =>{
-                    if(resp.res_code == 200){
+                    if(resp.res_code === 200){
                       this.indList(resp);
                     //   console.log(resp);
                       

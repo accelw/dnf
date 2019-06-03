@@ -1,6 +1,6 @@
 const gulp = require('gulp'),
       uglify = require('gulp-uglify'),
-      minifyCss = require('gulp-minify-css'),
+      cleanCss = require('gulp-clean-css'),
       gulpSass = require('gulp-sass'),
       htmlmin = require('gulp-htmlmin'),
       babel = require("gulp-babel"),
@@ -9,7 +9,7 @@ const gulp = require('gulp'),
 gulp.task('css',() =>{
     gulp.src('src/css/*.scss')
         .pipe(gulpSass())
-        .pipe(minifyCss())
+        .pipe(cleanCss())
         .pipe(gulp.dest('dist/css')) 
         .pipe(connect.reload());
 })
