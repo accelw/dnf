@@ -38,7 +38,7 @@ define(['jquery'], () => {
             $.each(list.res_body,function () {
                 str += `
                 <li id="${this.id}header_hot">
-                <a class="hot_pic" href="javascript:;" style="display:block; background : url(${this.pic}) no-repeat center center;"></a>
+                <a class="hot_pic" href="javascript:;"><img src ="${this.pic}"></a>
                 <a class="hot_name" href="javascript:;">${this.name}</a>
                 <div>
                   <span class="price">${this.price}元</span>

@@ -1,0 +1,1 @@
+"use strict";function _classCallCheck(n,c){if(!(n instanceof c))throw new TypeError("Cannot call a class as a function")}require(["./config"],function(){require(["header","footer"],function(){new function n(){_classCallCheck(this,n)}})});
