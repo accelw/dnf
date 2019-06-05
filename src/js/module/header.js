@@ -22,7 +22,7 @@ define(['jquery'], () => {
                 },() =>{
                     $('.hot_box').attr("style","display :none")
                 })
-                // this.search()
+                this.search()
             })
         }
         readyload () {
@@ -38,8 +38,8 @@ define(['jquery'], () => {
             $.each(list.res_body,function () {
                 str += `
                 <li id="${this.id}header_hot">
-                <a class="hot_pic" href="javascript:;"><img src ="${this.pic}"></a>
-                <a class="hot_name" href="javascript:;">${this.name}</a>
+                <a class="hot_pic" href="/html/detail.html?id=${this.id}"><img src ="${this.pic}"></a>
+                <a class="hot_name" href="/html/detail.html?id=${this.id}">${this.name}</a>
                 <div>
                   <span class="price">${this.price}元</span>
                   <span class="likes">喜欢 ： ${this.likes}</span>
@@ -51,10 +51,30 @@ define(['jquery'], () => {
             $("#header_box").html(str);
         }
         
-        // search(){
-
-        // }
-    }
-        
+        search(){
+            this.search = $("#search-box")
+            this.searchBtn = $("#search-btn")
+            this.search.on("keyup",() =>{
+                let val = this.search.val();
+                $.getJSON(`https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=${val}&cb=?`,resp =>{
+                    let arr = resp.s,
+                        str = "";
+                    $.each(arr,function(){
+                        str += `<li>${this}</li>`
+                        console.log(this);
+                    })
+                    $("#search-more").html(str);
+                })
+            })
+            $("#search-more").on("click","li",function(){
+                $("#search-box").val($(this).text());
+                $("#search-more").html(null);
+            })
+            this.searchBtn.on("click",() =>{
+                console.log($("#search-box").val());
+            })
+        }
+    }   
    new Header(); 
+   return false;
 });

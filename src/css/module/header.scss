@@ -123,6 +123,7 @@ header .header-main{
         margin-left: 120px;
         margin-top: 38px;
         height:38px;
+        position: relative;
         input{
             width:269px;
             height:38px;
@@ -130,6 +131,7 @@ header .header-main{
             background-color:transparent;
             float: left;
             outline: none;
+            color: #fff;
         }
         button{
             outline: none;
@@ -138,6 +140,19 @@ header .header-main{
             border: 0;
             float: left;
             background: url(http://localhost/dnf/dist/imgs/menu.png) no-repeat -10px -18px #e00011;
+        }
+        .searchDropDown{
+            position: absolute;
+            width:270px;
+            background: #fff;
+            z-index: 99;
+            top:38px;
+            border-radius: 2px;
+            font-size: 14px;
+            color: #333;
+            li{
+                padding: 4px;
+            }
         }
     }
     a{

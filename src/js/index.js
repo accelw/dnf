@@ -29,7 +29,7 @@ require(['./config'],() =>{
                 let str = "";
                 // console.log(list.res_body);
                 $.each(list.res_body,function () {
-                    str += `<a class="ban${this.id}" href="javascript:;" ><img src = "${this.pic}"></a>`
+                    str += `<a class="ban${this.id}" href="/html/list.html?id=${this.id}" ><img src = "${this.pic}"></a>`
                    
                 //    console.log(this);
 
@@ -41,8 +41,8 @@ require(['./config'],() =>{
                 console.log(list.res_body);
                 $.each(list.res_body,function () {
                     str += `<li id = "${this.id}menuId">
-                    <a class="hot_pic" href="javascript:;"><img src = "${this.pic}"></a>
-                    <a class="hot_name" href="javascript:;">${this.name}</a>
+                    <a class="hot_pic" href="/html/detail.html?id=${this.id}"><img src = "${this.pic}"></a>
+                    <a class="hot_name" href="/html/detail.html?id=${this.id}">${this.name}</a>
                     <div>
                       <span class="price">${this.price}元</span>
                       <span class="likes">喜欢 ： ${this.likes}</span>
@@ -57,4 +57,5 @@ require(['./config'],() =>{
         }
     new Index();
     })
+    return false;
 })

@@ -1,7 +1,7 @@
 // import { inherits } from "util";
 
 require(['./config'],() =>{
-    require(['header','footer'], () =>{
+    require(['template','header','footer'], (template) =>{
         class List{
             constructor(){
                 this.like = $("#list-likes");
@@ -14,8 +14,7 @@ require(['./config'],() =>{
                 $.get('http://rap2api.taobao.org/app/mock/178016/list_hot',resp =>{
                      if(resp.res_code === 200){
                        this.listHot(resp);
-                    //    console.log(resp);
-                       
+                    //    console.log(resp);                      
                      }
                 })
             }
@@ -25,15 +24,15 @@ require(['./config'],() =>{
                     if(this.id<4){
                     str += ` <li>
                     <div class="hot_coin">${this.id}</div>
-                    <a class="pic" href="javascript:;"><img src = "${this.pic}"></a>
-                    <a class="name" href="javascript:;">${this.name}</a>
+                    <a class="pic" href="/html/detail.html?id=${this.id}"><img src = "${this.pic}"></a>
+                    <a class="name" href="/html/detail.html?id=${this.id}">${this.name}</a>
                     <span class="sel">60天已售<i>${this.seled}</i></span>
                     <span class="price">${this.price}<u>${this.price}</u></span>
                 </li>`}else{
                     str +=`<li>
                     <div class="hot_coin2">${this.id}</div>
-                    <a class="pic" href="javascript:;"><img src = "${this.pic}"></a>
-                    <a class="name" href="javascript:;">${this.name}</a>
+                    <a class="pic" href="/html/detail.html?id=${this.id}"><img src = "${this.pic}"></a>
+                    <a class="name" href="/html/detail.html?id=${this.id}">${this.name}</a>
                     <span class="sel">60天已售<i>${this.seled}</i></span>
                     <span class="price">${this.price}<u>${this.price}</u></span>
                 </li>`
