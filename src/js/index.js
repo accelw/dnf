@@ -1,29 +1,31 @@
 
 
 require(['./config'],() =>{
-    require(['header','footer'], () =>{
+    require(['swiper','url','header','footer'], (Swiper,url) =>{
         class Index{
             constructor(){
                 this.pic = $("#hot_pic");
                 this.shop = $("#menu_shop");
                 this.init();
+                this.initSwiper(); 
             }
 
             init(){
-                $.get('http://rap2api.taobao.org/app/mock/178016/index_pic',resp =>{
+                $.get(url.baseUrl+'/index_pic',resp =>{
                      if(resp.res_code === 200){
                        this.indPic(resp);
                     //    console.log(resp);
                        
                      }
                 })
-                $.get('http://rap2api.taobao.org/app/mock/178016/index_list',resp =>{
+                $.get(url.baseUrl+'/index_list',resp =>{
                     if(resp.res_code === 200){
                       this.indList(resp);
                     //   console.log(resp);
                       
                     }
-               })        
+               })  
+                    
             }
             indPic(list){
                 let str = "";
@@ -38,7 +40,7 @@ require(['./config'],() =>{
             }
             indList(list){
                 let str = "";
-                console.log(list.res_body);
+                // console.log(list.res_body);
                 $.each(list.res_body,function () {
                     str += `<li id = "${this.id}menuId">
                     <a class="hot_pic" href="/html/detail.html?id=${this.id}"><img src = "${this.pic}"></a>
@@ -49,10 +51,30 @@ require(['./config'],() =>{
                     </div>
                   </li>`
                    
-                   console.log(this);
+                //    console.log(this);
 
                 })
                 $("#menu_shop").html(str);
+            }
+            initSwiper(){
+                var mySwiper = new Swiper ('.swiper-container', {
+                    effect: 'fade', 
+                    loop: true, 
+                    autoplay:{
+                        stopOnLastSide:true,
+                    },
+                    fadeEffect: {
+                    crossFade: true,
+                    },     
+                    pagination: {
+                      el: '.swiper-pagination',
+                      clickable : true,
+                    },        
+                    navigation: {
+                      nextEl: '.swiper-button-next',
+                      prevEl: '.swiper-button-prev',
+                    },
+                  })    
             }
         }
     new Index();

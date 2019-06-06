@@ -1,11 +1,11 @@
 // import { resolve } from "dns";
 
-define(['jquery'], () => {
+define(['url','jquery'], (url) => {
     class Header{
         constructor(){
             this.container = $('header')
             this.readyload().then(() =>{
-               $.get('http://rap2api.taobao.org/app/mock/178016/header_box',resp =>{
+               $.get(url.baseUrl+'/header_box',resp =>{
                     if(resp.res_node == 200){
                        this.rander(resp);
                     //    console.log(resp);
@@ -34,7 +34,7 @@ define(['jquery'], () => {
         }
         rander(list){
             let str = "";
-            console.log(list.res_body);
+            // console.log(list.res_body);
             $.each(list.res_body,function () {
                 str += `
                 <li id="${this.id}header_hot">
@@ -61,7 +61,7 @@ define(['jquery'], () => {
                         str = "";
                     $.each(arr,function(){
                         str += `<li>${this}</li>`
-                        console.log(this);
+                        // console.log(this);
                     })
                     $("#search-more").html(str);
                 })

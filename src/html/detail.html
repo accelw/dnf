@@ -19,22 +19,22 @@
 
     <div class="detail_nav container">
         <ul>
-            <li><a href="html/list.html">礼包收藏</a></li>
-            <li><a href="html/list.html">手办模型</a></li>
-            <li><a href="html/list.html">数码电子</a></li>
-            <li><a href="html/list.html">服饰日用</a></li>
+            <li><a href="/html/list.html">礼包收藏</a></li>
+            <li><a href="/html/list.html">手办模型</a></li>
+            <li><a href="/html/list.html">数码电子</a></li>
+            <li><a href="/html/list.html">服饰日用</a></li>
         </ul>
     </div>
     <div class="detail_main container">
         <div class="detail_main_L">
-            <div class="mid_pic">
-                <div ><img src="../imgs/index_01.png"></div>
-                <div class="hidden"><img src="../imgs/index_02.png"></div>
-                <div class="hidden"><img src="../imgs/index_03.png"></div>
-                <div class="hidden"><img src="../imgs/index_04.png"></div>
-            </div>
+            <ul class="mid_pic" id="mid-pic-box">
+                <li ><img src="../imgs/index_01.png"></li>
+                <li class="hidden"><img src="../imgs/index_02.png"></li>
+                <li class="hidden"><img src="../imgs/index_03.png"></li>
+                <li class="hidden"><img src="../imgs/index_04.png"></li>
+            </ul>
             <div class="small_pic">
-                <ul>
+                <ul id ="pic-box">
                     <li class="show"><span></span><img src="../imgs/index_01.png"></li>
                     <li><span></span><img src="../imgs/index_02.png"></li>
                     <li><span></span><img src="../imgs/index_03.png"></li>
@@ -71,16 +71,26 @@
                     <br>
                     <span>了</span>
                     <br>
-                    <a class="point">喜欢TA</a>
+                    <a class="point" id="like">喜欢TA</a>
                 </div>
             </div>
             <div class="color_size">
                 <div class="color">
                     <span class="detail_font">颜色</span>
                     <span>
-                        <ul>
+                        <ul id="col">
                             <li>
                                 <a class="click">
+                                    <span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a >
+                                    <span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a >
                                     <span></span>
                                 </a>
                             </li>
@@ -90,9 +100,21 @@
                 <div class="size">
                     <span class="detail_font">尺码</span>
                     <span>
-                        <ul>
+                        <ul id="siz">
                             <li>
                                 <a class="click">
+                                    <span></span>
+                                    均码
+                                </a>
+                            </li>
+                            <li>
+                                <a >
+                                    <span></span>
+                                    均码
+                                </a>
+                            </li>
+                            <li>
+                                <a >
                                     <span></span>
                                     均码
                                 </a>
@@ -103,9 +125,9 @@
             </div>
             <div class="num">
                 <span class="detail_font">数量</span>             
-                    <span><a ><img src="../imgs/buy_jian.png" ></a></span>
-                    <span><input type="text" value="1"></span>
-                    <span><a ><img src="../imgs/buy_jia.png" ></a></span>
+                    <a id="num-down"><img src="../imgs/buy_jian.png" ></a>
+                    <input type="text" value="1">
+                    <a id="num-up"><img src="../imgs/buy_jia.png" ></a>
             </div>
             <div class="operate">
                 <span class="detail_font"></span>
