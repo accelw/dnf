@@ -66,6 +66,7 @@ header{
         .mid_pic{
             width:538px;
             height:538px;
+            overflow: hidden;
             li{
                 width: inherit;
                 height: inherit;
@@ -410,13 +411,24 @@ header{
                     color: #666;
                     font-size: 12px;
                     background: url(../imgs/show_base.png) -14px -167px no-repeat;
-                    width: 180px;
+                    width: auto;
                     text-indent: 22px;
                     color: #666;
                     margin-right: 0px;
                     display: block;
                     float: left;
                     line-height: 18px;
+                }
+                .like_click{
+                    height: 18px;
+                    line-height: 18px;
+                    text-indent: 20px;
+                    margin: 0 !important;
+                    display: block;
+                    float: left;
+                    cursor: pointer;
+                    color: #ee4727;
+                    background: url(../imgs/show_base.png) -14px -280px no-repeat;
                 }
             }
         }

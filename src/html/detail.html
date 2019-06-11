@@ -25,49 +25,57 @@
             <li><a href="/html/list.html">服饰日用</a></li>
         </ul>
     </div>
-    <div class="detail_main container">
+    <div class="detail_main container" id="detail-container">
+        
+        <script type="text/html" id="detail_content">
         <div class="detail_main_L">
-            <ul class="mid_pic" id="mid-pic-box">
-                <li ><img src="../imgs/index_01.png"></li>
-                <li class="hidden"><img src="../imgs/index_02.png"></li>
+            <ul class="mid_pic" id="goodsID{{id}}">
+             
+                {{each pic picture}}
+                <div ><img src="{{picture.pic}}"></div>
+                {{/each}}
+                <!-- <li class="hidden"><img src="../imgs/index_02.png"></li>
                 <li class="hidden"><img src="../imgs/index_03.png"></li>
-                <li class="hidden"><img src="../imgs/index_04.png"></li>
+                <li class="hidden"><img src="../imgs/index_04.png"></li> -->
             </ul>
             <div class="small_pic">
+                
                 <ul id ="pic-box">
-                    <li class="show"><span></span><img src="../imgs/index_01.png"></li>
-                    <li><span></span><img src="../imgs/index_02.png"></li>
+                    {{each pic picture}}
+                    <li ><span></span><img src="{{picture.pic}}"></li>
+                    {{/each}}
+                    <!-- <li><span></span><img src="../imgs/index_02.png"></li>
                     <li><span></span><img src="../imgs/index_03.png"></li>
-                    <li><span></span><img src="../imgs/index_04.png"></li>
+                    <li><span></span><img src="../imgs/index_04.png"></li> -->
                 </ul>
             </div>
         </div>
         <div class="detail_main_R">
-            <h3>写个普通样式</h3>
-            <span class="tag">来了老弟</span>
+            <h3>{{title}}</h3>
+            <span class="tag">{{hot}}</span>
             <div class="detail_item">
                 <div class="now">
                     <span class="detail_font">现价</span>
-                    <span>￥<i>996</i></span>
+                    <span>￥<i>{{price}}</i></span>
                 </div>
                 <div class="before">
                     <span class="detail_font">原价</span>
-                    <span>￥998元</span>
+                    <span>￥{{old_price}}元</span>
                 </div>
             </div>
             <div class="item_mes">
                 <div class="sel">
-                    <span class="num">904</span>
+                    <span class="num">{{sel}}</span>
                     <br>
                     <span>60天销量</span>
                 </div>
                 <div class="talk">
-                    <a class="talk_num">0</a>
+                    <a class="talk_num">{{talk}}</a>
                     <br>
                     <span>累计评价</span>
                 </div>
                 <div class="likes">
-                    <span class="num">908</span>
+                    <span class="num">{{likes}}</span>
                     <br>
                     <span>了</span>
                     <br>
@@ -79,21 +87,26 @@
                     <span class="detail_font">颜色</span>
                     <span>
                         <ul id="col">
-                            <li>
+                             <!-- <li>
                                 <a class="click">
+                                    <img>
                                     <span></span>
                                 </a>
-                            </li>
+                            </li> 
                             <li>
                                 <a >
+                                    <img>
                                     <span></span>
                                 </a>
-                            </li>
-                            <li>
+                            </li> -->
+                            {{each color colors}}
+                            <li> 
                                 <a >
+                                    <img src="{{colors.Color}}">
                                     <span></span>
                                 </a>
                             </li>
+                            {{/each}}
                         </ul>
                     </span>
                 </div>
@@ -104,19 +117,19 @@
                             <li>
                                 <a class="click">
                                     <span></span>
-                                    均码
+                                    {{Size}}
                                 </a>
                             </li>
                             <li>
                                 <a >
                                     <span></span>
-                                    均码
+                                    {{Size}}
                                 </a>
                             </li>
                             <li>
                                 <a >
                                     <span></span>
-                                    均码
+                                    {{Size}}
                                 </a>
                             </li>
                         </ul>
@@ -124,28 +137,33 @@
                 </div>
             </div>
             <div class="num">
-                <span class="detail_font">数量</span>             
-                    <a id="num-down"><img src="../imgs/buy_jian.png" ></a>
-                    <input type="text" value="1">
-                    <a id="num-up"><img src="../imgs/buy_jia.png" ></a>
+                    <span class="detail_font">数量</span>             
+                        <a id="num-down"><img src="../imgs/buy_jian.png" ></a>
+                        <input type="text" value="1" id = "car-num">
+                        <a id="num-up"><img src="../imgs/buy_jia.png" ></a>
+                </div>
+                <div class="operate">
+                    <span class="detail_font"></span>
+                    <span><a class="buy">立即购买</a></span>
+                    <span><a class="buy_car" id ="add-car">加入购物车</a></span>
+                </div>
+                <div class="gift">
+                    <span class="detail_font"></span>
+                    <span>赠送游戏道具   /   100%官方正品</span>
+                </div>
+                <div class="collect">
+                    <span class="detail_font"></span>
+                    <span>
+                        <a href="javascript:;" id="collect">收藏宝贝 （{{likes}}位勇士收藏）</a>
+                    </span>
+                </div>
             </div>
-            <div class="operate">
-                <span class="detail_font"></span>
-                <span><a class="buy">立即购买</a></span>
-                <span><a class="buy_car">加入购物车</a></span>
-            </div>
-            <div class="gift">
-                <span class="detail_font"></span>
-                <span>赠送游戏道具   /   100%官方正品</span>
-            </div>
-            <div class="collect">
-                <span class="detail_font"></span>
-                <span>
-                    <a href="javascript:;" id="collect">收藏宝贝 （xx位勇士收藏）</a>
-                </span>
-            </div>
-        </div>
+        </script>
+          
+    
     </div>
+   
+
     <footer></footer>
 </body>
 <script src="../libs/require/require.min.js" data-main="../js/detail"></script>
