@@ -17,7 +17,7 @@ header nav .nav-left{
     line-height: 30px;
     height: 30px;
     a{
-        color: #333;     
+        color: #333;    
     }
     .hot_point{
         background: url(http://localhost/dnf/dist/imgs/right.png) -6px -4px no-repeat;
@@ -88,9 +88,14 @@ header nav .nav-coin{
         cursor: default;
         a{
             color: $mainColor;
+            margin-left: 10px;
+        }
+        .log{
+            color: $mainColor;
             display: inline-block;
             padding-left:19px; 
             background: url(http://localhost/dnf/dist/imgs/right.png) -8px -35px no-repeat;
+            margin-left: 10px;
         }
     }
     .dis{

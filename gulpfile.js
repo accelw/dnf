@@ -39,7 +39,11 @@ gulp.task('js',() =>{
         .pipe(gulp.dest('dist/js'))
         .pipe(connect.reload());
 })
-
+gulp.task('api',()=>{
+    gulp.src('src/api/**/*.php')
+        .pipe(gulp.dest('dist/api'))
+        .pipe(connect.reload());
+})
 gulp.task('libs',() =>{
     gulp.src('src/libs/**/*')
         .pipe(gulp.dest('dist/libs'))
@@ -64,7 +68,8 @@ gulp.task('watch',() =>{
     gulp.watch('src/**/*.html',['html']);
     gulp.watch('src/js/*.js',['js']);
     gulp.watch('src/css/*.scss',['css']);
-    gulp.watch('src/imgs/**/*',['imgs'])
+    gulp.watch('src/imgs/**/*',['imgs']);
+    gulp.watch('src/api/**/*.php',['api']);
 })
 
-gulp.task('default',['html','css','js','libs','imgs','server','watch']);
+gulp.task('default',['html','css','js','api','libs','imgs','server','watch']);

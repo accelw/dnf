@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QQ注册</title>
+    <link rel="stylesheet" href="/libs/swiper/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="/css/signup.css">
+</head>
+<body>
+    <div class="swiper-container sign-swi">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background: url(../imgs/01-1.png) no-repeat center center"></div>
+            <div class="swiper-slide" style="background: url(../imgs/01-3.png) no-repeat center center"></div>
+            <div class="swiper-slide" style="background: url(../imgs/01-4.png) no-repeat center center"></div>
+        </div>
+    </div>  
+    
+    <div class="sign-main">
+        <div class="sign-top">
+            <a href="">意见反馈</a>
+            <a href="">简体中文</a>
+            <a class="lianghao" href=""><img src="../imgs/logo3.png"> QQ靓号</a>
+        </div>
+        <div class="main">
+            <div class="form">
+                <h2>欢迎注册QQ</h2>
+                <a href="javascript:;">免费靓号</a>
+                <h3>每一天，乐在沟通。</h3>
+                <form >
+                    <div>
+                        <input id="name" type="text" placeholder="昵称">
+                        <div class="name-warn hidden">
+                            <div id="name-warnning" class="show">昵称不能为空</div>
+                        </div>           
+                    </div>
+                    <div>
+                        <input id="password" type="password" placeholder="密码">
+                        <div id="password-list" class="password-wrap hidden">
+                            <div id="no-sp" class="password-tips ok">不能包括空格</div>
+                            <div id="length" class="password-tips">长度为8-16个字符</div>
+                            <div id="sti" class="password-tips">必须包含字母、符号、数字至少2种</div>
+                        </div>
+                        <div id="password-warnning" class="password-warn hidden">
+                            <div class="show">密码不能为空</div>
+                        </div>
+                    </div>
+                    <div>
+                        <input class="area" type="text" list="itemlist" value="+86">
+                        <datalist id="itemlist">
+                            <option selected = "+86" value="+86">
+                            <option value="+867">
+                        </datalist>
+                        <input id="phoneNum" type="text" class="phone" placeholder="手机号码">
+                        <p>可通过该手机找回密码</p>
+                        <div id="duanxin" class="hidden">
+                        <input type="text" class="yanzhengma" placeholder="短信验证码">
+                        <a class="subyanzhengma" href="javascript:;">发送短信验证码</a>
+                        </div>
+                    </div>
+                    <div>
+                        <input id="sub" type="button" class="submit" value="立即注册">
+                    </div>
+                    <div class="clause hidden">
+                            <div class="show">请先同意服务条款</div>
+                    </div>
+                    <div class="check">
+                        <input id="check" type="checkbox" checked><span> 我已阅读并同意相关服务条款和隐私政策 </span>
+                    </div>
+                   
+                </form>
+            </div>
+            <div class="footer">
+                    Copyright © 1998-2019Tencent All Rights Reserved      
+            </div>
+        </div>
+        
+    </div>
+</body>
+<script src="../libs/require/require.min.js" data-main="../js/signup"></script>
+</html>

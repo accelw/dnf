@@ -1,10 +1,21 @@
 // import { resolve } from "dns";
 
-define(['url','jquery'], (url) => {
+define(['url','cookie','jquery'], (url,cookie) => {
     class Header{
         constructor(){
             this.container = $('header')
             this.readyload().then(() =>{
+                if($.cookie('user')){
+                    let user = $.cookie('user').slice(" ").split(",")
+                    $("#login").html(`<span>欢迎您</span>
+                    <a href="javascript:;">${user[0]}</a>
+                    <a href="/html/shopcar">购物车</a>
+                    <a id="logout" class="logout"  href="">退出</a>`)
+                }
+                $("#login").on('click','#logout',function(){
+                    $.removeCookie('user',{path:'/'})
+                })
+
                $.get(url.baseUrl+'/header_box',resp =>{
                     if(resp.res_node == 200){
                        this.rander(resp);

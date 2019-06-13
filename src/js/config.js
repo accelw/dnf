@@ -6,6 +6,12 @@ require.config({
         footer : 'js/module/footer',
         template : 'libs/template-web',
         swiper:'libs/swiper/dist/js/swiper.min',
-        url:'js/module/url'
+        url:'js/module/url',
+        cookie:'libs/jquery.cookie'
+    },
+    shim:{
+        cookie:{
+            deps:['jquery']
+        }
     }
 })
