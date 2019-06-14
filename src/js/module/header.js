@@ -9,7 +9,7 @@ define(['url','cookie','jquery'], (url,cookie) => {
                     let user = $.cookie('user').slice(" ").split(",")
                     $("#login").html(`<span>欢迎您</span>
                     <a href="javascript:;">${user[0]}</a>
-                    <a href="/html/shopcar">购物车</a>
+                    <a href="/html/shopcar.html">购物车</a>
                     <a id="logout" class="logout"  href="">退出</a>`)
                 }
                 $("#login").on('click','#logout',function(){

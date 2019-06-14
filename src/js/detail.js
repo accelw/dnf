@@ -1,5 +1,5 @@
 require(['./config'],() =>{
-    require(['url','template','header','footer'], (url,template,header) =>{
+    require(['cookie','url','template','header','footer'], (cookie,url,template,header) =>{
         class Detail{
             constructor(){
                 this.container = $("#detail-container")
@@ -22,7 +22,9 @@ require(['./config'],() =>{
                         this.detail = {
                             id : location.search.slice(4),
                             title : resp.res_body.title,
-                            price : resp.res_body.price
+                            price : resp.res_body.price,
+                            pic : resp.res_body.pic,
+                            old_price : resp.res_body.old_price
                         }                          
                     }
                 })
@@ -101,6 +103,7 @@ require(['./config'],() =>{
             addCar(){
                 this.container.on("click","#add-car",()=>{
                     // console.log(this)
+                  if($.cookie('user')){  
                     this.detail = {
                         ...this.detail,
                         num : Number($("#car-num").val())
@@ -122,6 +125,10 @@ require(['./config'],() =>{
                     } else{
                         localStorage.setItem('car',JSON.stringify([this.detail]))
                     }
+                }else{
+                    alert("请先登录")
+                    $(location).attr('href', 'http://localhost:2333/html/login.html');
+                }
                 })
             }
         }

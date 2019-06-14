@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <link rel="stylesheet" href="/css/shopcar.css">
+    <link rel="stylesheet" href="../libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="big_bg">
+            <div class="big_bg1"><img src="../imgs/index_02.png" alt=""></div>
+            <div class="big_bg2"><img src="../imgs/index_03.png" alt=""></div>
+            <div class="big_bg3"><img src="../imgs/index_04.png" alt=""></div>
+        </div>
+        <div class="shopcar" id="car-list">
+           
+        </div>
+        <script type="text/html" id="shop-main">
+            <ul class="buytop">
+                    <li  class="checkb"><input id="allchecked" type="checkbox"> 全选</li>
+                    <li class="name">商品</li>
+                    <li class="price">单价（元）</li>
+                    <li class="num">数量</li>
+                    <li class="all">小计</li>
+                    <li class="detel">操作</li>
+                </ul>             
+            <div class="goods" id="goods">
+          {{each res shopcar}}      
+           <ul class="goods-list" id = "{{shopcar.id}}">
+               <li class="checkb"><input class="check" type="checkbox"></li>
+               <li class="name">
+                   <a class="pic" href="/html/detail.html?{{shopcar.id}}">
+                   <img src="{{shopcar.pic[0].pic}}">
+                   </a>
+                   <div class="info">
+                       <a href="/html/detail.html?{{shopcar.id}}">{{shopcar.title}}</a>
+                       <span>颜色：彩</span>
+                       <span>尺寸：均码</span>
+                   </div>
+               </li>
+               <li class="price">
+                   <span>￥{{shopcar.price}}</span>
+                   <i>{{shopcar.old_price}}</i>
+               </li>
+               <li class="num">            
+                   <a id="num-down" class="left"><img src="../imgs/buy_jian.png" ></a>
+                   <input type="text" value="{{shopcar.num}}" id = "car-num">
+                   <a id="num-up"><img src="../imgs/buy_jia.png" ></a>
+               </li>
+               <li class="all">
+                   <span>${{shopcar.price*shopcar.num}}</span>
+               </li>
+               <li class="detel">
+                   <a  href="javascript:;">删除</a>
+               </li>
+           </ul>
+           {{/each}}
+       </div>
+       <div class="shop-bottom">
+           <a href="/html/list">继续购物</a>
+           <a id="delet" href="javascript:;">删除选中商品</a>
+           <span>
+                   承诺：赠送游戏道具 / 7天无理由退换货 / 100%官方正品
+           </span>
+       </div>
+       <div class="sub">            
+           <a href="javascript:;" id="sub">去结算</a>
+           <span class="allprice">总价：0￥<span id="price"></span></span>
+           <span class="allnum">数量：0<span id="num"></span></span>
+       </div>
+       </script>
+    </main>
+    <footer></footer>
+</body>
+<script src="../libs/require/require.min.js" data-main="../js/shopcar"></script>
+</html>
