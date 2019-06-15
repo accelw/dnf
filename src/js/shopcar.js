@@ -10,8 +10,8 @@ require(['./config'],() =>{
             }
             shopCarinit(){
                 this.rander(JSON.parse(localStorage.getItem('car')));
-                this.allCheck();
                 this.Dele();
+                this.allCheck();
                 this.changeNum();
             }
             rander(resp){
@@ -21,25 +21,7 @@ require(['./config'],() =>{
                 })
                 $("#car-list").html(html)
             }
-            allCheck(){
-                this.container.on('click',"#allchecked", () =>{
-                    if($("#allchecked").is(":checked")){
-                        $(".check").prop("checked",true);
-                    }else{
-                        $(".check").prop("checked",false);
-                    }
-                    this.Price($(this)); 
-                })
-                this.container.on('click','.check', () =>{
-                    // console.log($(".check").length ===$(".check:checked").length)
-                    if($(".check").length ===$(".check:checked").length){
-                        $("#allchecked").prop("checked",true);
-                    }else{
-                        $("#allchecked").prop("checked",false);
-                    }
-                    this.Price($(this)); 
-                })
-            }
+           
             Dele(){
                 let _this =this;
                 this.container.on("click",".detel",function(){
@@ -58,10 +40,16 @@ require(['./config'],() =>{
                         if (isExist){
                             // console.log(carList)
                             carList.splice(i,1)
-                            localStorage.setItem('car',JSON.stringify(carList))
+                            localStorage.setItem('car',JSON.stringify(carList))                            
                             alert("删除成功")
+                            if($(".check").length ===$(".check:checked").length){
+                                $("#allchecked").prop("checked",true);
+                            }else{
+                                $("#allchecked").prop("checked",false);
+                            }                           
                          }
                    }
+                   
                    _this.Price($(this)); 
                 })
                 // this.container.on("click","#delet",function(){
@@ -73,6 +61,25 @@ require(['./config'],() =>{
                    
                 //    }
                 // })
+            }
+            allCheck(){
+                this.container.on('click',"#allchecked", () =>{
+                    if($("#allchecked").is(":checked")){
+                        $(".check").prop("checked",true);
+                    }else{
+                        $(".check").prop("checked",false);
+                    }
+                    this.Price($(this)); 
+                })
+                this.container.on('click','.check', () =>{
+                    console.log($(".check").length ===$(".check:checked").length)
+                    if($(".check").length ===$(".check:checked").length){
+                        $("#allchecked").prop("checked",true);
+                    }else{
+                        $("#allchecked").prop("checked",false);
+                    }
+                    this.Price($(this)); 
+                })
             }
             changeNum(){
                 let _this = this;
@@ -121,7 +128,7 @@ require(['./config'],() =>{
                 if(is[0]!= this ){
                     let numb = is.siblings('input').val()
                     let pri = is.parent().siblings('.price').children('span').html()
-                    console.log(is)
+                    // console.log(is)
                     is.parent().siblings('.all').children().html('￥'+numb*pri)
                 }
                 if($(".check:checked").length>=1 && $(this).parent()){
