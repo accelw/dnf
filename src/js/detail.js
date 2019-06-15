@@ -122,8 +122,10 @@ require(['./config'],() =>{
                             carList.push(this.detail)
                         }
                         localStorage.setItem('car',JSON.stringify(carList))
+                        alert("添加成功")
                     } else{
                         localStorage.setItem('car',JSON.stringify([this.detail]))
+                        alert("添加成功")
                     }
                 }else{
                     alert("请先登录")

@@ -48,11 +48,11 @@
                </li>
                <li class="num">            
                    <a id="num-down" class="left"><img src="../imgs/buy_jian.png" ></a>
-                   <input type="text" value="{{shopcar.num}}" id = "car-num">
+                   <input type="text" value="{{shopcar.num}}" >
                    <a id="num-up"><img src="../imgs/buy_jia.png" ></a>
                </li>
                <li class="all">
-                   <span>${{shopcar.price*shopcar.num}}</span>
+                   <span>￥{{shopcar.price*shopcar.num}}</span>
                </li>
                <li class="detel">
                    <a  href="javascript:;">删除</a>
@@ -61,16 +61,16 @@
            {{/each}}
        </div>
        <div class="shop-bottom">
-           <a href="/html/list">继续购物</a>
-           <a id="delet" href="javascript:;">删除选中商品</a>
+           <a href="/html/list.html">继续购物</a>
+           <!-- <a id="delet" href="javascript:;">删除选中商品</a> -->
            <span>
                    承诺：赠送游戏道具 / 7天无理由退换货 / 100%官方正品
            </span>
        </div>
        <div class="sub">            
            <a href="javascript:;" id="sub">去结算</a>
-           <span class="allprice">总价：0￥<span id="price"></span></span>
-           <span class="allnum">数量：0<span id="num"></span></span>
+           <span class="allprice">总价：￥<span id="price">0</span></span>
+           <span class="allnum">数量：<span id="num">0</span></span>
        </div>
        </script>
     </main>
