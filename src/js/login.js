@@ -16,14 +16,16 @@ require(['./config'],() =>{
                        let res = JSON.parse(resp);
                        if(res.res_code === 200){
                        console.log(res.res_body.list[0]);
-                       if(res.res_body.list[0].name === name&&res.res_body.list[0].password === password){
-                           $.cookie("user",`${name},${password}`,{expires: 7,path:'/'})
-                           $(location).attr('href', 'http://localhost:2333');
+                       if(res.res_body.list[0]){
+
+                        if(res.res_body.list[0].name === name&&res.res_body.list[0].password === password){
+                            $.cookie("user",`${name},${password}`,{expires: 7,path:'/'})
+                            $(location).attr('href', 'http://localhost:2333');
+                            }
                         }else{
                             alert("账号或密码错误")
                         }
-                       
-                       }
+                      }
                    })
                 })
             }
